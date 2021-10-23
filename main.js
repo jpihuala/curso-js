@@ -19,4 +19,4 @@ if (topping == "oreo") {
 
 precioFinal = helado + precio
 
-console.log("el helado cuesta " + precioFinal);
+console.log("el helado cuesta " + precioFinal + " en pesos.");
