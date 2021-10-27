@@ -1,5 +1,5 @@
 let ingresarNombre = prompt("Ingrese su nombre, por favor.")
-let combo = prompt("Hola," + ingresarNombre +"." + "\nQue combo de shampoo solido quiere: \n -alfa \n -beta \n -gamma \n -delta");
+let combo = prompt("Hola," + ingresarNombre +"." + "\nQue combo de shampoo solido quiere: \n -Alfa \n -Beta \n -Gamma \n -Delta");
 
 let precio = 0;
 var envio = 400;
