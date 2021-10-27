@@ -7,11 +7,11 @@ var precioFinal = 0;
 
 if (combo == "alfa") {
     precio = 1450;
-} else if(combo == "beta"){
+} else if(combo == "beta" || combo == "Beta"){
     precio = 1450;
-} else if(combo == "gamma"){
+} else if(combo == "gamma" || combo == "Gamma"){
     precio = 1450;
-} else if(combo == "delta"){
+} else if(combo == "delta" || combo == "Delta"){
     precio = 1450;
 } else{
     console.log("no tenemos ese combo");
