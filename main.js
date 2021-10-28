@@ -4,8 +4,12 @@ let combo = prompt("Hola," + ingresarNombre +"." + "\nQue combo de shampoo solid
 let precio = 0;
 var envio = 400;
 var precioFinal = 0;
+let iteracion = "si";
+let ingreseHorario;
+let mañana;
+let tarde;
 
-if (combo == "alfa") {
+if (combo == "alfa" || combo == "Alfa") {
     precio = 1450;
 } else if(combo == "beta" || combo == "Beta"){
     precio = 1450;
@@ -23,11 +27,13 @@ precioFinal = envio + precio
 alert("El combo cuesta " + precioFinal + " en pesos." + "\n Incluye " + envio + " de envio." );
 
 
-let ingreseHorario = prompt("Ingrese horario que desea recibir el envio: \n -mañana  \n -tarde");
-var mañana = ["Lunes"];
-var tarde = ["Jueves"];
-while (ingreseHorario != "ESC") {
-    switch (ingreseHorario) {
+
+while (iteracion == "si"){
+ingreseHorario = prompt("Ingrese horario que desea recibir el envio: \n -mañana  \n -tarde");
+mañana = ["Lunes"];
+tarde = ["Jueves"];
+
+switch (ingreseHorario) {
     case "mañana":
         alert(ingresarNombre + " su pedido estara llegando el " + mañana);
         break;
@@ -37,5 +43,5 @@ while (ingreseHorario != "ESC") {
     default:
         alert(ingresarNombre + ", por favor indique un horario");
     }
-    ingreseHorario = prompt("Consulte otro horario: " + horarioMañana + horarioTarde);
+    iteracion = prompt("Desea realizar otra operacion? (si/no)");
 }
