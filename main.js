@@ -1,13 +1,11 @@
-// let ingresarNombre = prompt("Ingrese su nombre, por favor.")
+let ingresarNombre = prompt("Ingrese su nombre, por favor.")
 // let combo = prompt("Hola," + ingresarNombre +"." + "\nQue combo de shampoo solido quiere: \n -Alfa \n -Beta \n -Gamma \n -Delta");
 
 // let precio = 0;
 // var envio = 400;
 // var precioFinal = 0;
-// let iteracion = "si";
-// let ingreseHorario;
-// let mañana;
-// let tarde;
+
+
 
 // if (combo == "alfa" || combo == "Alfa") {
 //     precio = 1450;
@@ -28,65 +26,84 @@
 
 
 
-// while (iteracion == "si"){
-// ingreseHorario = prompt("Ingrese horario que desea recibir el envio: \n -mañana  \n -tarde");
-// mañana = ["Lunes"];
-// tarde = ["Jueves"];
-
-// switch (ingreseHorario) {
-//     case "mañana":
-//         alert(ingresarNombre + " su pedido estara llegando el " + mañana);
-//         break;
-//     case "tarde":
-//         alert(ingresarNombre + " su pedido estara llegando el " + tarde);
-//         break;
-//     default:
-//         alert(ingresarNombre + ", por favor indique un horario");
-//     }
-//     iteracion = prompt("Desea realizar otra operacion? (si/no)");
-// }
-
-
-const pedidoChaupoo = () => {
-    const combo = Number(prompt(`Hola, realiza tu pedido.
-    Que desae llevar?
-
-    1- Combo Alfa
-    2- Combo Beta
-    3- Combo Gamma
-    4- Combo Delta`));
-
-    armadoPedido(combo);
+function entregarPedido(mensaje, precio, envio){
+    alert(`${mensaje}, el costo es $${precio}.-
+    Incluye $${envio} de envio.`)
 }
 
-function armadoPedido(comb){
+const multiplicar = (a, b, c) => {
+    return (a * b) + c;
+}
+
+function armadoPedido(comb, cant){
     let mensaje = " ";
     let precio = 0;
+    let envio = 400;
 
     switch (comb) {
         case 1:
             mensaje = "Tu combo Alfa, se esta preparando "
             precio = 1450
+            precio = multiplicar (precio, cant, envio);
             break;
         case 2:
             mensaje = "Tu combo Beta, se esta preparando"
-            precio = 1450
+            precio = 1250
+            precio = multiplicar (precio, cant, envio);
             break;
         case 3:
             mensaje = "Tu combo Gamma, se esta preparando"
-            precio = 1450
+            precio = 1550
+            precio = multiplicar (precio, cant, envio);
             break;
         case 4:
             mensaje = "Tu combo Delta, se esta preparando"
-            precio = 1450
+            precio = 1900
+            precio = multiplicar (precio, cant, envio);
             break;
-            
+                        
         default:
+            mensaje = `Lo sentimos, no tenemos ese combo.`;
             break;
+        }
+        entregarPedido(mensaje, precio, envio)
+        
+}
+
+const pedidoChaupoo = () => {
+    const combo = Number(prompt(`Hola, realiza tu pedido.
+    Que desea llevar?
+    
+    1- Combo Alfa
+    2- Combo Beta
+    3- Combo Gamma
+    4- Combo Delta`));
+    const cantidad = Number(prompt(`Ingrese la cantidad de combos`))
+    
+    armadoPedido(combo, cantidad);
+}
+pedidoChaupoo();
+
+
+let iteracion = "si";
+let ingreseHorario;
+let mañana;
+let tarde;
+
+while (iteracion == "si"){
+ingreseHorario = prompt("Ingrese horario que desea recibir el envio: \n -mañana  \n -tarde");
+mañana = ["Lunes"];
+tarde = ["Jueves"];
+    
+switch (ingreseHorario) {
+    case "mañana":
+        alert(ingresarNombre + " su pedido estara llegando el " + mañana);
+        break;
+    case "tarde":
+        alert(ingresarNombre + " su pedido estara llegando el " + tarde);
+        break;
+    default:
+        alert(ingresarNombre + ", por favor indique un horario");
     }
-    alert(mensaje)
-
-
-
-
+    iteracion = prompt("Desea realizar otra operacion? (si/no)");
 }
